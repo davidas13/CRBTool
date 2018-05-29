@@ -423,18 +423,23 @@ class Boilerplate(QtWidgets.QMainWindow):
                     load_value = load_json.values()[x]
                     if load_value != '':
                         nam_file, typ_file = os.path.splitext(load_value)
-                        nam = nam_file.split('/')[-1]
+                        # nam = nam_file.split('/')[-1]
+                        nam = nam_file + '.txt'
                         # self.act_cb[x].setStyleSheet("QToolTip { color: white; background-color: rgb(48, 170, 27); border: 1px solid white; }")
                         try:
-                            if typ_file == '.py':
-                                vars_ = {}
-                                exec(open(load_value).read(), vars_)
-                                if vars_['activate_tooltip'] == True:
-                                    self.act_cb[x].setToolTip(vars_['TOOLTIP'])
-                            elif typ_file == '.mel':
-                                self.act_cb[x].setToolTip('Directory: {}'.format(load_value))
+                            # TODO: try edited
+                            read_tooltip = open(nam, 'r')
+                            self.act_cb[x].setToolTip(read_tooltip)
+                            # if typ_file == '.py':
+                                # vars_ = {}
+                                # exec(open(load_value).read(), vars_)
+                                # if vars_['activate_tooltip'] == True:
+                                #     self.act_cb[x].setToolTip(vars_['TOOLTIP'])
+                            # elif typ_file == '.mel':
+                                # self.act_cb[x].setToolTip('Directory: {}'.format(load_value))
                         except:
-                            self.act_cb[x].setToolTip('Directory: {}'.format(load_value))
+                            pass
+                            # self.act_cb[x].setToolTip('Directory: {}'.format(load_value))
                     else:
                         self.act_cb[x].setToolTip(None)
                     load_file.close()
