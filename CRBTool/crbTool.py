@@ -111,7 +111,6 @@ class Boilerplate(QtWidgets.QMainWindow):
         self.setObjectName(WINDOW_OBJECT)
         self.setWindowTitle(WINDOW_TITLE)
         self.setWindowIcon(QtGui.QIcon(os.path.join(UI_PATH, 'icons/win_icon.png')))
-        self.setStyleSheet("QToolTip { color: white; background-color: rgb(48, 170, 27); border: 1px solid white; }")
         # Window type
         self.setWindowFlags(QtCore.Qt.Window)
 
