@@ -179,13 +179,13 @@ class Boilerplate(QtWidgets.QMainWindow):
         self.cus_ac = (
             self.main_widget.cus_action_1_cb,
             self.main_widget.cus_action_2_cb,
-            self.main_widget.cus_action_3_cb,
+            self.main_widget.cus_action_3_cb
         )
 
         self.ch_ac = (
             self.main_widget.check_action_1_cb,
             self.main_widget.check_action_2_cb,
-            self.main_widget.check_action_3_cb,
+            self.main_widget.check_action_3_cb
         )
 
         self.set_tooltip()
@@ -580,7 +580,7 @@ def run_maya():
     if not DOCK_WITH_MAYA_UI:
         crb.show()  # Show the UI
     elif DOCK_WITH_MAYA_UI:
-        allowed_areas = ['right', 'left']
+        allowed_areas = ['right', 'left', 'bottom']
         cmds.dockControl(WINDOW_TITLE, label=WINDOW_TITLE, area='left',
                          content=WINDOW_OBJECT, allowedArea=allowed_areas)
 
