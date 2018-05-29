@@ -5,7 +5,7 @@ sys.dont_write_bytecode = True
 # ----------------------------------------------------------------------
 # Path setup
 # ----------------------------------------------------------------------
-STRING_PATH = 'G:/temp/David/crbTool'
+STRING_PATH = 'C:/Users/David As/Desktop/CRB/CRBTool'
 PATH = os.path.normpath(STRING_PATH)
 print(PATH)
 WINDOW_TITLE = 'CRB Tool'

@@ -111,7 +111,7 @@ class Boilerplate(QtWidgets.QMainWindow):
         self.setObjectName(WINDOW_OBJECT)
         self.setWindowTitle(WINDOW_TITLE)
         self.setWindowIcon(QtGui.QIcon(os.path.join(UI_PATH, 'icons/win_icon.png')))
-
+        self.setStyleSheet("QToolTip { color: white; background-color: rgb(48, 170, 27); border: 1px solid white; }")
         # Window type
         self.setWindowFlags(QtCore.Qt.Window)
 
@@ -425,11 +425,10 @@ class Boilerplate(QtWidgets.QMainWindow):
                         nam_file, typ_file = os.path.splitext(load_value)
                         # nam = nam_file.split('/')[-1]
                         nam = nam_file + '.txt'
-                        # self.act_cb[x].setStyleSheet("QToolTip { color: white; background-color: rgb(48, 170, 27); border: 1px solid white; }")
-                        try:
+                        if os.path.isfile(nam):
                             # TODO: try edited
-                            read_tooltip = open(nam, 'r')
-                            self.act_cb[x].setToolTip(read_tooltip)
+                            tooltip_file = open(nam, 'r')
+                            self.act_cb[x].setToolTip('{}'.format(tooltip_file.read()))
                             # if typ_file == '.py':
                                 # vars_ = {}
                                 # exec(open(load_value).read(), vars_)
@@ -437,9 +436,8 @@ class Boilerplate(QtWidgets.QMainWindow):
                                 #     self.act_cb[x].setToolTip(vars_['TOOLTIP'])
                             # elif typ_file == '.mel':
                                 # self.act_cb[x].setToolTip('Directory: {}'.format(load_value))
-                        except:
-                            pass
-                            # self.act_cb[x].setToolTip('Directory: {}'.format(load_value))
+                        else:
+                            self.act_cb[x].setToolTip('Directory: {}'.format(load_value))
                     else:
                         self.act_cb[x].setToolTip(None)
                     load_file.close()
