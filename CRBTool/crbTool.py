@@ -251,14 +251,27 @@ class Boilerplate(QtWidgets.QMainWindow):
         if load_value[x] != '':
             if self.main_widget.sett_cb.currentText() == 'Run Script':
                 if typ_file == '.py':
-                    print('RUN: {}'.format(load_value))
+                    print('RUN {}:'.format(load_value))
                     try:
                         exec(open(exec_file).read())
-                        main()
+                        try:
+                            print(show_print)
+                            self.show_info('Information', show_print, QtGui.QMessageBox.Information)
+                        except:
+                            pass
                     except Exception as ex:
-                        print('ERROR: {}'.format(ex))
-                elif typ_file == '.mel':
-                    mel.eval(open(exec_file).read())
+                        try:
+                            self.show_info('Error', str(ex), QtGui.QMessageBox.Critical)
+                        except:
+                            print('ERROR: {}'.format(ex))
+                #     print('RUN: {}'.format(load_value))
+                #     try:
+                #         exec(open(exec_file).read())
+                #         main()
+                #     except Exception as ex:
+                #         print('ERROR: {}'.format(ex))
+                # elif typ_file == '.mel':
+                #     mel.eval(open(exec_file).read())
             elif self.main_widget.sett_cb.currentText() == 'Run Script':
                 if typ_file == '.ma' or typ_file == '.mb':
                     print('\nCan not run {}, but must be imported!!\n'.format(exec_file))
