@@ -318,14 +318,13 @@ class Boilerplate(QtWidgets.QMainWindow):
                 load_value = load_json.values()[x]
                 if load_value != '' and self.act_cb[x].isChecked():
                     nam_file, typ_file = os.path.splitext(load_value)
-
                     if typ_file == '.py':
                         print('RUN {}:'.format(load_value))
                         try:
                             exec(open(load_value).read())
-                            main()
                         except Exception as ex:
                             print('ERROR: {}'.format(ex))
+                            
                     elif typ_file == '.mel':
                         print('RUN {}:'.format(load_value))
                         mel.eval(open(load_value).read())
@@ -425,16 +424,8 @@ class Boilerplate(QtWidgets.QMainWindow):
                         # nam = nam_file.split('/')[-1]
                         nam = nam_file + '.txt'
                         if os.path.isfile(nam):
-                            # TODO: try edited
                             tooltip_file = open(nam, 'r')
                             self.act_cb[x].setToolTip('{}'.format(tooltip_file.read()))
-                            # if typ_file == '.py':
-                                # vars_ = {}
-                                # exec(open(load_value).read(), vars_)
-                                # if vars_['activate_tooltip'] == True:
-                                #     self.act_cb[x].setToolTip(vars_['TOOLTIP'])
-                            # elif typ_file == '.mel':
-                                # self.act_cb[x].setToolTip('Directory: {}'.format(load_value))
                         else:
                             self.act_cb[x].setToolTip('Directory: {}'.format(load_value))
                     else:
