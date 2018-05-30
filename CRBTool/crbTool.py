@@ -497,9 +497,12 @@ class Boilerplate(QtWidgets.QMainWindow):
 
     def set_nam(self, path):
         nam = str(os.path.basename(path))
-        split_ = nam.split('.')[0].split('_')
-        join_ = ' '.join(split_).title()
-        return join_
+        if '_' in nam:
+            split_ = nam.split('.')[0].split('_')
+            join_ = ' '.join(split_).title()
+            return join_
+        else:
+            return nam
 
     def show_info(self, title, text, icon):
         info = QtGui.QMessageBox()
