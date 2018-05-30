@@ -322,11 +322,16 @@ class Boilerplate(QtWidgets.QMainWindow):
                         print('RUN {}:'.format(load_value))
                         try:
                             exec(open(load_value).read())
-                            print(show_print)
-                            self.show_info('Information', show_print, QtGui.QMessageBox.Information)
+                            try:
+                                print(show_print)
+                                self.show_info('Information', show_print, QtGui.QMessageBox.Information)
+                            except:
+                                pass
                         except Exception as ex:
-                            print('ERROR: {}'.format(ex))
-                            self.show_info('Error', str(ex), QtGui.QMessageBox.Critical)
+                            try:
+                                self.show_info('Error', str(ex), QtGui.QMessageBox.Critical)
+                            except:
+                                print('ERROR: {}'.format(ex))
 
                     elif typ_file == '.mel':
                         print('RUN {}:'.format(load_value))
