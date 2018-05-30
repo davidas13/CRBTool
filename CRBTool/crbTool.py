@@ -322,9 +322,12 @@ class Boilerplate(QtWidgets.QMainWindow):
                         print('RUN {}:'.format(load_value))
                         try:
                             exec(open(load_value).read())
+                            print(show_print)
+                            self.show_info('Information', text_show, QtGui.QMessageBox.Information)
                         except Exception as ex:
                             print('ERROR: {}'.format(ex))
-                            
+                            self.show_info('Error', str(ex), QtGui.QMessageBox.Critical)
+
                     elif typ_file == '.mel':
                         print('RUN {}:'.format(load_value))
                         mel.eval(open(load_value).read())
@@ -493,6 +496,13 @@ class Boilerplate(QtWidgets.QMainWindow):
         join_ = ' '.join(split_).title()
         return join_
 
+    def show_info(self, title, text, icon):
+        info = QtGui.QMessageBox()
+        info.setIcon(icon)
+        info.setWindowTitle(title)
+        info.setText(text)
+        info.exec_()
+        pass
 # ----------------------------------------------------------------------
 # DCC application helper functions
 # ----------------------------------------------------------------------
