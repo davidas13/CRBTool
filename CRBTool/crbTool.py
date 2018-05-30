@@ -255,8 +255,8 @@ class Boilerplate(QtWidgets.QMainWindow):
                     try:
                         exec(open(exec_file).read())
                         try:
-                            print(show_print)
-                            self.show_info('Information', show_print, QtGui.QMessageBox.Information)
+                            print(show_information)
+                            self.show_info('Information', show_information, QtGui.QMessageBox.Information)
                         except:
                             pass
                     except Exception as ex:
@@ -336,8 +336,8 @@ class Boilerplate(QtWidgets.QMainWindow):
                         try:
                             exec(open(load_value).read())
                             try:
-                                print(show_print)
-                                self.show_info('Information', show_print, QtGui.QMessageBox.Information)
+                                print(show_information)
+                                self.show_info('Information', show_information, QtGui.QMessageBox.Information)
                             except:
                                 pass
                         except Exception as ex:
