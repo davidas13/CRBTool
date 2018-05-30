@@ -264,14 +264,6 @@ class Boilerplate(QtWidgets.QMainWindow):
                             self.show_info('Error', str(ex), QtGui.QMessageBox.Critical)
                         except:
                             print('ERROR: {}'.format(ex))
-                #     print('RUN: {}'.format(load_value))
-                #     try:
-                #         exec(open(exec_file).read())
-                #         main()
-                #     except Exception as ex:
-                #         print('ERROR: {}'.format(ex))
-                # elif typ_file == '.mel':
-                #     mel.eval(open(exec_file).read())
             elif self.main_widget.sett_cb.currentText() == 'Run Script':
                 if typ_file == '.ma' or typ_file == '.mb':
                     print('\nCan not run {}, but must be imported!!\n'.format(exec_file))
