@@ -323,7 +323,7 @@ class Boilerplate(QtWidgets.QMainWindow):
                         try:
                             exec(open(load_value).read())
                             print(show_print)
-                            self.show_info('Information', text_show, QtGui.QMessageBox.Information)
+                            self.show_info('Information', show_print, QtGui.QMessageBox.Information)
                         except Exception as ex:
                             print('ERROR: {}'.format(ex))
                             self.show_info('Error', str(ex), QtGui.QMessageBox.Critical)
