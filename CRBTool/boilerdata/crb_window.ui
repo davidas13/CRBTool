@@ -425,6 +425,9 @@ QPushButton#run_pb:pressed {
               <height>20</height>
              </size>
             </property>
+            <property name="editable">
+             <bool>false</bool>
+            </property>
             <item>
              <property name="text">
               <string>Hello 3</string>
@@ -490,6 +493,9 @@ QPushButton#run_pb:pressed {
               <height>20</height>
              </size>
             </property>
+            <property name="editable">
+             <bool>false</bool>
+            </property>
             <item>
              <property name="text">
               <string>Hello 2</string>
@@ -554,6 +560,9 @@ QPushButton#run_pb:pressed {
               <width>291</width>
               <height>20</height>
              </size>
+            </property>
+            <property name="editable">
+             <bool>false</bool>
             </property>
             <item>
              <property name="text">

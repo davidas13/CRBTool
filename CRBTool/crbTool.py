@@ -300,7 +300,7 @@ class Boilerplate(QtWidgets.QMainWindow):
             key_nam = 'Directory '+ str(x+1)
             if key_nam in load_key[x] and load_value[x] != '':
                 for ldir in os.listdir(load_value[x]):
-                    patterns = ['*.ma','*.py','*.mel','*.mb', '*.ink']
+                    patterns = ['*.ma','*.py','*.mel','*.mb']
                     for patt in patterns:
                         if fnmatch.fnmatch(ldir, patt):
                             self.cus_ac[x].addItem(ldir)
