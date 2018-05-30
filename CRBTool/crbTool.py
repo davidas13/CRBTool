@@ -266,7 +266,7 @@ class Boilerplate(QtWidgets.QMainWindow):
                             print('ERROR: {}'.format(ex))
             elif self.main_widget.sett_cb.currentText() == 'Run Script':
                 if typ_file == '.ma' or typ_file == '.mb':
-                    print('\nCan not run {}, but must be imported!!\n'.format(exec_file))
+                    print('\n{} tidak bisa dijalankan, tetapi harus di import!!\n'.format(exec_file))
                 
             elif self.main_widget.sett_cb.currentText() == 'Import Ref Maya':
                 if typ_file == '.ma':
