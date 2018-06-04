@@ -252,18 +252,10 @@ class Boilerplate(QtWidgets.QMainWindow):
             if self.main_widget.sett_cb.currentText() == 'Run Script':
                 if typ_file == '.py':
                     print('RUN {}:'.format(load_value))
-                    try:
-                        exec(open(exec_file).read())
-                        try:
-                            print(show_information)
-                            self.show_info('Information', show_information, QtGui.QMessageBox.Information)
-                        except:
-                            pass
-                    except Exception as ex:
-                        try:
-                            self.show_info('Error', str(ex), QtGui.QMessageBox.Critical)
-                        except:
-                            print('ERROR: {}'.format(ex))
+                    exec(open(exec_file).read())
+                elif typ_file == '.mel':
+                    print('RUN {}:'.format(load_value))
+                    mel.eval(open(load_value).read())
             elif self.main_widget.sett_cb.currentText() == 'Run Script':
                 if typ_file == '.ma' or typ_file == '.mb':
                     print('\n{} tidak bisa dijalankan, harus di import!!\n'.format(exec_file))
@@ -325,19 +317,7 @@ class Boilerplate(QtWidgets.QMainWindow):
                     nam_file, typ_file = os.path.splitext(load_value)
                     if typ_file == '.py':
                         print('RUN {}:'.format(load_value))
-                        try:
-                            exec(open(load_value).read())
-                            try:
-                                print(show_information)
-                                self.show_info('Information', show_information, QtGui.QMessageBox.Information)
-                            except:
-                                pass
-                        except Exception as ex:
-                            try:
-                                self.show_info('Error', str(ex), QtGui.QMessageBox.Critical)
-                            except:
-                                print('ERROR: {}'.format(ex))
-
+                        exec(open(load_value).read())
                     elif typ_file == '.mel':
                         print('RUN {}:'.format(load_value))
                         mel.eval(open(load_value).read())
@@ -509,13 +489,6 @@ class Boilerplate(QtWidgets.QMainWindow):
         else:
             return nam
 
-    def show_info(self, title, text, icon):
-        info = QtGui.QMessageBox()
-        info.setIcon(icon)
-        info.setWindowTitle(title)
-        info.setText(text)
-        info.exec_()
-        pass
 # ----------------------------------------------------------------------
 # DCC application helper functions
 # ----------------------------------------------------------------------
