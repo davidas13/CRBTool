@@ -601,11 +601,6 @@ QPushButton#run_pb:pressed {
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="ad_tab">
-       <attribute name="title">
-        <string>Advanced Action</string>
-       </attribute>
-      </widget>
      </widget>
     </item>
    </layout>
@@ -631,7 +626,6 @@ QPushButton#run_pb:pressed {
      <string>Help</string>
     </property>
     <addaction name="actionHelp"/>
-    <addaction name="actionAbout"/>
    </widget>
    <addaction name="menuSetup"/>
    <addaction name="menuHelp"/>
@@ -668,11 +662,6 @@ QPushButton#run_pb:pressed {
   <action name="actionIntroduction">
    <property name="text">
     <string>Introduction</string>
-   </property>
-  </action>
-  <action name="actionAbout">
-   <property name="text">
-    <string>About</string>
    </property>
   </action>
  </widget>
