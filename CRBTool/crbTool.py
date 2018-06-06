@@ -487,7 +487,8 @@ class Boilerplate(QtWidgets.QMainWindow):
             join_ = ' '.join(split_).title()
             return join_
         else:
-            return nam
+            nam_file, typ_file = os.path.splitext(nam)
+            return nam_file
 
 # ----------------------------------------------------------------------
 # DCC application helper functions
