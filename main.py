@@ -18,9 +18,7 @@ DIR_PATH = 'C:/CRBTool'
 FILE_PATH = os.path.join(DIR_PATH, 'save.json')
 CUS_FILE_PATH = os.path.join(DIR_PATH, 'cus_save.json')
 
-# ICON_PATH = ''
-
-# BUTTON_ICON_PATH = ''
+VER_NOTE = '<b>CRBTool</b><br>Mini Tool for Render<br>version 0.9 Beta'
 
 
 

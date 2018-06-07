@@ -45,7 +45,7 @@ if not MAYA and not NUKE:
 # Window title and object names
 WINDOW_TITLE = WINDOW_TITLE
 WINDOW_OBJECT = WINDOW_OBJECT
-
+VER_NOTE = VER_NOTE
 # Maya-specific
 DOCK_WITH_MAYA_UI = False
 
@@ -146,10 +146,12 @@ class Boilerplate(QtWidgets.QMainWindow):
         self.act_ac = self.main_widget.actionActivate
         self.res_ac = self.main_widget.actionReset
         self.hel_ac = self.main_widget.actionHelp
+        self.abo_ac = self.main_widget.actionAbout
 
         self.act_ac.triggered.connect(self.activate_ac)
         self.res_ac.triggered.connect(self.reset_ac)
         self.hel_ac.triggered.connect(self.help_ac)
+        self.abo_ac.triggered.connect(self.about_ac)
         
         self.main_widget.action_pb.clicked.connect(self.run_action)
         self.main_widget.action_pb.setIcon(QtGui.QIcon(os.path.join(UI_PATH, 'icons/action.png')))
@@ -489,7 +491,9 @@ class Boilerplate(QtWidgets.QMainWindow):
         else:
             nam_file, typ_file = os.path.splitext(nam)
             return nam_file
-
+        
+    def about_ac(self):
+        QtGui.QMessageBox.about(self, "About CRBTool", VER_NOTE)
 # ----------------------------------------------------------------------
 # DCC application helper functions
 # ----------------------------------------------------------------------

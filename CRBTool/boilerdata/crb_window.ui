@@ -601,11 +601,6 @@ QPushButton#run_pb:pressed {
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="ad_tab">
-       <attribute name="title">
-        <string>Advanced Action</string>
-       </attribute>
-      </widget>
      </widget>
     </item>
    </layout>
