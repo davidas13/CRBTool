@@ -8,7 +8,7 @@ sys.dont_write_bytecode = True
 STRING_PATH = 'G:/temp/David/crbTool'       #'C:/Users/David As/Desktop/CRB/CRBTool'
 PATH = os.path.normpath(STRING_PATH)
 print(PATH)
-WINDOW_TITLE = 'CRBTool'
+WINDOW_TITLE = 'CRBTool: {}'.format(os.environ['USERNAME'])
 WINDOW_OBJECT = 'crb_tool'
 
 MAIN_UI = 'crb_window.ui'
