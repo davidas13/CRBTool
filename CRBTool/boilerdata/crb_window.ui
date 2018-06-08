@@ -641,7 +641,7 @@ QPushButton#run_pb:pressed {
     <string>Activate</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+A</string>
+    <string>Ctrl+P</string>
    </property>
   </action>
   <action name="actionReset">
