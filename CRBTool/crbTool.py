@@ -89,7 +89,7 @@ from boilerlib.Qt import QtWidgets  # pylint: disable=E0611
 from boilerlib.Qt import QtCore  # pylint: disable=E0611
 from boilerlib.Qt import QtCompat
 from boilerlib.Qt import QtGui
-from boilerlib.Qt.QtWidgets import QFileDialog
+from boilerlib.Qt.QtWidgets import QFileDialog, QTabWidget
 
 from boilerlib import mayapalette
 from functools import partial
@@ -462,7 +462,8 @@ class Boilerplate(QtWidgets.QMainWindow):
             self.event_show()
             print('== FOLDER & FILE DELETED ==')
     def im_ex(self, val):
-        if val is 'Import':
+        #TODO: disable action import/export
+        if val is 'Import' and self.main_widget.tabWidget.currentIndex() == 0:
             import_file = QFileDialog.getOpenFileName(self, val, 'C:/', '*.json')
             if import_file[0]:
                 open_file = open(import_file[0], 'r')
@@ -474,7 +475,7 @@ class Boilerplate(QtWidgets.QMainWindow):
                 for x in range(len(self.la_pb)):
                     self.check_icons(x)
                 print('Import from {}. Successfully'.format(import_file[0]))
-        elif val is 'Export':
+        elif val is 'Export' and self.main_widget.tabWidget.currentIndex() == 0:
             export_file = QFileDialog.getSaveFileName(self, val, 'C:/', '*.json')
             if export_file[0]:
                 open_file = open(FILE_PATH, 'r')
@@ -484,9 +485,6 @@ class Boilerplate(QtWidgets.QMainWindow):
                 json.dump(json_open_file, write_file, sort_keys=True, indent=4)
                 write_file.close()
                 print('Export from {}. Successfully'.format(export_file[0]))
-            #TODO: current tabwidget
-        if QtWidgets.QTabWidget.currentIndex(self.main_widget.run_tab):
-            print('run_tab')
     def check_icons(self, pos):
         try:
             with open(FILE_PATH, 'r') as load_file:
