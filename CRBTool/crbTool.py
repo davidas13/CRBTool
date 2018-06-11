@@ -147,11 +147,15 @@ class Boilerplate(QtWidgets.QMainWindow):
         self.res_ac = self.main_widget.actionReset
         self.hel_ac = self.main_widget.actionHelp
         self.abo_ac = self.main_widget.actionAbout
+        self.imp_ac = self.main_widget.actionImport
+        self.exp_ac = self.main_widget.actionExport
 
         self.act_ac.triggered.connect(self.activate_ac)
         self.res_ac.triggered.connect(self.reset_ac)
         self.hel_ac.triggered.connect(self.help_ac)
         self.abo_ac.triggered.connect(self.about_ac)
+        self.imp_ac.triggered.connect(partial(self.im_ex, 'Import'))
+        self.exp_ac.triggered.connect(partial(self.im_ex, 'Export'))
         
         self.main_widget.action_pb.clicked.connect(self.run_action)
         self.main_widget.action_pb.setIcon(QtGui.QIcon(os.path.join(UI_PATH, 'icons/action.png')))
@@ -457,7 +461,32 @@ class Boilerplate(QtWidgets.QMainWindow):
                 self.check_icons(self.la_pb.index(x))
             self.event_show()
             print('== FOLDER & FILE DELETED ==')
-
+    def im_ex(self, val):
+        if val is 'Import':
+            import_file = QFileDialog.getOpenFileName(self, val, 'C:/', '*.json')
+            if import_file[0]:
+                open_file = open(import_file[0], 'r')
+                replace_file = open(FILE_PATH, 'w')
+                json_open_file = json.load(open_file, object_pairs_hook=OrderedDict)
+                replace_file.truncate()
+                json.dump(json_open_file, replace_file, sort_keys=True, indent=4)
+                replace_file.close()
+                for x in range(len(self.la_pb)):
+                    self.check_icons(x)
+                print('Import from {}. Successfully'.format(import_file[0]))
+        elif val is 'Export':
+            export_file = QFileDialog.getSaveFileName(self, val, 'C:/', '*.json')
+            if export_file[0]:
+                open_file = open(FILE_PATH, 'r')
+                write_file = open(export_file[0], 'w')
+                json_open_file = json.load(open_file, object_pairs_hook=OrderedDict)
+                write_file.truncate()
+                json.dump(json_open_file, write_file, sort_keys=True, indent=4)
+                write_file.close()
+                print('Export from {}. Successfully'.format(export_file[0]))
+            #TODO: current tabwidget
+        if QtWidgets.QTabWidget.currentIndex(self.main_widget.run_tab):
+            print('run_tab')
     def check_icons(self, pos):
         try:
             with open(FILE_PATH, 'r') as load_file:

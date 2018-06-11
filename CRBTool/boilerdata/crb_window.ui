@@ -620,6 +620,9 @@ QPushButton#run_pb:pressed {
     </property>
     <addaction name="actionActivate"/>
     <addaction name="actionReset"/>
+    <addaction name="separator"/>
+    <addaction name="actionImport"/>
+    <addaction name="actionExport"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -668,6 +671,16 @@ QPushButton#run_pb:pressed {
   <action name="actionAbout">
    <property name="text">
     <string>About</string>
+   </property>
+  </action>
+  <action name="actionExport">
+   <property name="text">
+    <string>Export</string>
+   </property>
+  </action>
+  <action name="actionImport">
+   <property name="text">
+    <string>Import</string>
    </property>
   </action>
  </widget>
