@@ -208,6 +208,8 @@ class Boilerplate(QtWidgets.QMainWindow):
 
         if os.path.isfile(CUS_FILE_PATH):
             self.set_item_list()
+        
+        self.main_widget.tabWidget.currentChanged.connect(self.im_ex)
 # ----------------------------------------------------------------------
 # Tab Mini Action
 # ----------------------------------------------------------------------    
@@ -463,28 +465,34 @@ class Boilerplate(QtWidgets.QMainWindow):
             print('== FOLDER & FILE DELETED ==')
     def im_ex(self, val):
         #TODO: disable action import/export
-        if val is 'Import' and self.main_widget.tabWidget.currentIndex() == 0:
-            import_file = QFileDialog.getOpenFileName(self, val, 'C:/', '*.json')
-            if import_file[0]:
-                open_file = open(import_file[0], 'r')
-                replace_file = open(FILE_PATH, 'w')
-                json_open_file = json.load(open_file, object_pairs_hook=OrderedDict)
-                replace_file.truncate()
-                json.dump(json_open_file, replace_file, sort_keys=True, indent=4)
-                replace_file.close()
-                for x in range(len(self.la_pb)):
-                    self.check_icons(x)
-                print('Import from {}. Successfully'.format(import_file[0]))
-        elif val is 'Export' and self.main_widget.tabWidget.currentIndex() == 0:
-            export_file = QFileDialog.getSaveFileName(self, val, 'C:/', '*.json')
-            if export_file[0]:
-                open_file = open(FILE_PATH, 'r')
-                write_file = open(export_file[0], 'w')
-                json_open_file = json.load(open_file, object_pairs_hook=OrderedDict)
-                write_file.truncate()
-                json.dump(json_open_file, write_file, sort_keys=True, indent=4)
-                write_file.close()
-                print('Export from {}. Successfully'.format(export_file[0]))
+        if self.main_widget.tabWidget.currentIndex() == 0:
+            self.imp_ac.setEnabled(True)
+            self.exp_ac.setEnabled(True)
+            if val is 'Import':
+                import_file = QFileDialog.getOpenFileName(self, val, 'C:/', '*.json')
+                if import_file[0]:
+                    open_file = open(import_file[0], 'r')
+                    replace_file = open(FILE_PATH, 'w')
+                    json_open_file = json.load(open_file, object_pairs_hook=OrderedDict)
+                    replace_file.truncate()
+                    json.dump(json_open_file, replace_file, sort_keys=True, indent=4)
+                    replace_file.close()
+                    for x in range(len(self.la_pb)):
+                        self.check_icons(x)
+                    print('Import from {}. Successfully'.format(import_file[0]))
+            elif val is 'Export':
+                export_file = QFileDialog.getSaveFileName(self, val, 'C:/', '*.json')
+                if export_file[0]:
+                    open_file = open(FILE_PATH, 'r')
+                    write_file = open(export_file[0], 'w')
+                    json_open_file = json.load(open_file, object_pairs_hook=OrderedDict)
+                    write_file.truncate()
+                    json.dump(json_open_file, write_file, sort_keys=True, indent=4)
+                    write_file.close()
+                    print('Export from {}. Successfully'.format(export_file[0]))
+        else:
+            self.imp_ac.setEnabled(False)
+            self.exp_ac.setEnabled(False)
     def check_icons(self, pos):
         try:
             with open(FILE_PATH, 'r') as load_file:
@@ -503,10 +511,15 @@ class Boilerplate(QtWidgets.QMainWindow):
         if not os.path.exists(DIR_PATH):
             self.main_widget.tabWidget.setEnabled(False)
             self.res_ac.setEnabled(False)
+            self.imp_ac.setEnabled(False)
+            self.exp_ac.setEnabled(False)
             self.act_ac.setText('Activate')
+
         else:
             self.main_widget.tabWidget.setEnabled(True)
             self.res_ac.setEnabled(True)
+            self.imp_ac.setEnabled(True)
+            self.exp_ac.setEnabled(True)
             self.act_ac.setText('Deactivate')
 
     def set_nam(self, path):

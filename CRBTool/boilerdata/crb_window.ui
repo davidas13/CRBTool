@@ -49,7 +49,7 @@
       </property>
       <widget class="QWidget" name="run_tab">
        <attribute name="title">
-        <string>Run Script</string>
+        <string>Run Action</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
@@ -615,6 +615,20 @@ QPushButton#run_pb:pressed {
     </rect>
    </property>
    <widget class="QMenu" name="menuSetup">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>179</y>
+      <width>135</width>
+      <height>147</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>100</width>
+      <height>0</height>
+     </size>
+    </property>
     <property name="title">
      <string>Setup</string>
     </property>
@@ -643,16 +657,10 @@ QPushButton#run_pb:pressed {
    <property name="text">
     <string>Activate</string>
    </property>
-   <property name="shortcut">
-    <string>Ctrl+P</string>
-   </property>
   </action>
   <action name="actionReset">
    <property name="text">
     <string>Reset</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+R</string>
    </property>
   </action>
   <action name="actionHelp">
