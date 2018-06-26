@@ -6,13 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>505</width>
+    <width>578</width>
     <height>167</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>505</width>
+    <width>578</width>
     <height>167</height>
    </size>
   </property>
@@ -49,7 +49,7 @@
       </property>
       <widget class="QWidget" name="run_tab">
        <attribute name="title">
-        <string>Run Script</string>
+        <string>Run Action</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
@@ -57,170 +57,7 @@
           <property name="sizeConstraint">
            <enum>QLayout::SetDefaultConstraint</enum>
           </property>
-          <item row="0" column="2" rowspan="3">
-           <widget class="Line" name="line">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="5">
-           <widget class="QCheckBox" name="action_4_cb">
-            <property name="text">
-             <string>Action 4</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QPushButton" name="load_action_1_pb">
-            <property name="minimumSize">
-             <size>
-              <width>31</width>
-              <height>23</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>31</width>
-              <height>23</height>
-             </size>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="6">
-           <widget class="QPushButton" name="load_action_4_pb">
-            <property name="minimumSize">
-             <size>
-              <width>31</width>
-              <height>23</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>31</width>
-              <height>23</height>
-             </size>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QPushButton" name="load_action_2_pb">
-            <property name="minimumSize">
-             <size>
-              <width>31</width>
-              <height>23</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>31</width>
-              <height>23</height>
-             </size>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <widget class="QCheckBox" name="action_1_cb">
-            <property name="text">
-             <string>Action 1</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QCheckBox" name="action_2_cb">
-            <property name="text">
-             <string>Action 2</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="5">
-           <widget class="QCheckBox" name="action_5_cb">
-            <property name="text">
-             <string>Action 5</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="6">
-           <widget class="QPushButton" name="load_action_5_pb">
-            <property name="minimumSize">
-             <size>
-              <width>31</width>
-              <height>23</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>31</width>
-              <height>23</height>
-             </size>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QCheckBox" name="action_3_cb">
-            <property name="text">
-             <string>Action 3</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="5">
-           <widget class="QCheckBox" name="action_6_cb">
-            <property name="text">
-             <string>Action 6</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="6">
-           <widget class="QPushButton" name="load_action_6_pb">
-            <property name="minimumSize">
-             <size>
-              <width>31</width>
-              <height>23</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>31</width>
-              <height>23</height>
-             </size>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="1">
-           <widget class="QPushButton" name="load_action_3_pb">
-            <property name="minimumSize">
-             <size>
-              <width>31</width>
-              <height>23</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>31</width>
-              <height>23</height>
-             </size>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="3" rowspan="3">
+          <item row="0" column="5" rowspan="3">
            <widget class="QFrame" name="frame_2">
             <property name="minimumSize">
              <size>
@@ -296,8 +133,348 @@ QPushButton#action_pb:pressed {
             </widget>
            </widget>
           </item>
-          <item row="0" column="4" rowspan="3">
+          <item row="1" column="8">
+           <widget class="QCheckBox" name="action_5_cb">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="8">
+           <widget class="QCheckBox" name="action_4_cb">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="8">
+           <widget class="QCheckBox" name="action_6_cb">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="7">
+           <widget class="QPushButton" name="load_action_6_pb">
+            <property name="minimumSize">
+             <size>
+              <width>31</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>31</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QPushButton" name="load_action_2_pb">
+            <property name="minimumSize">
+             <size>
+              <width>31</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>31</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="7">
+           <widget class="QPushButton" name="load_action_5_pb">
+            <property name="minimumSize">
+             <size>
+              <width>31</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>31</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="9">
+           <widget class="QPushButton" name="btn_run_6_pb">
+            <property name="minimumSize">
+             <size>
+              <width>31</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>31</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../icons/action_.png</normaloff>../icons/action_.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="9">
+           <widget class="QPushButton" name="btn_run_4_pb">
+            <property name="minimumSize">
+             <size>
+              <width>31</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>31</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../icons/action_.png</normaloff>../icons/action_.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QPushButton" name="btn_run_1_pb">
+            <property name="minimumSize">
+             <size>
+              <width>31</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>31</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../icons/action_.png</normaloff>../icons/action_.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QCheckBox" name="action_2_cb">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QPushButton" name="load_action_1_pb">
+            <property name="minimumSize">
+             <size>
+              <width>31</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>31</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QCheckBox" name="action_3_cb">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QPushButton" name="load_action_3_pb">
+            <property name="minimumSize">
+             <size>
+              <width>31</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>31</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="9">
+           <widget class="QPushButton" name="btn_run_5_pb">
+            <property name="minimumSize">
+             <size>
+              <width>31</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>31</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../icons/action_.png</normaloff>../icons/action_.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="7">
+           <widget class="QPushButton" name="load_action_4_pb">
+            <property name="minimumSize">
+             <size>
+              <width>31</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>31</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QCheckBox" name="action_1_cb">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="6" rowspan="3">
            <widget class="Line" name="line_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="3">
+           <widget class="QPushButton" name="btn_run_3_pb">
+            <property name="minimumSize">
+             <size>
+              <width>31</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>31</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../icons/action_.png</normaloff>../icons/action_.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <widget class="QPushButton" name="btn_run_2_pb">
+            <property name="minimumSize">
+             <size>
+              <width>31</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>31</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../icons/action_.png</normaloff>../icons/action_.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="4" rowspan="3">
+           <widget class="Line" name="line">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
@@ -610,22 +787,40 @@ QPushButton#run_pb:pressed {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>505</width>
+     <width>578</width>
      <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuSetup">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>179</y>
+      <width>135</width>
+      <height>147</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>100</width>
+      <height>0</height>
+     </size>
+    </property>
     <property name="title">
      <string>Setup</string>
     </property>
     <addaction name="actionActivate"/>
     <addaction name="actionReset"/>
+    <addaction name="separator"/>
+    <addaction name="actionImport"/>
+    <addaction name="actionExport"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
      <string>Help</string>
     </property>
     <addaction name="actionHelp"/>
+    <addaction name="actionAbout"/>
    </widget>
    <addaction name="menuSetup"/>
    <addaction name="menuHelp"/>
@@ -639,16 +834,10 @@ QPushButton#run_pb:pressed {
    <property name="text">
     <string>Activate</string>
    </property>
-   <property name="shortcut">
-    <string>Ctrl+A</string>
-   </property>
   </action>
   <action name="actionReset">
    <property name="text">
     <string>Reset</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+R</string>
    </property>
   </action>
   <action name="actionHelp">
@@ -662,6 +851,21 @@ QPushButton#run_pb:pressed {
   <action name="actionIntroduction">
    <property name="text">
     <string>Introduction</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionExport">
+   <property name="text">
+    <string>Export</string>
+   </property>
+  </action>
+  <action name="actionImport">
+   <property name="text">
+    <string>Import</string>
    </property>
   </action>
  </widget>

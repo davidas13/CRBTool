@@ -10,7 +10,7 @@ import sys
 import os
 import fnmatch
 import platform
-from main import *
+from crbMain import *
 
 sys.dont_write_bytecode = True  # Avoid writing .pyc files
 
@@ -180,6 +180,14 @@ class Boilerplate(QtWidgets.QMainWindow):
             self.main_widget.load_action_5_pb,
             self.main_widget.load_action_6_pb
         )
+        self.btn_run = (
+            self.main_widget.btn_run_1_pb,
+            self.main_widget.btn_run_2_pb,
+            self.main_widget.btn_run_3_pb,
+            self.main_widget.btn_run_4_pb,
+            self.main_widget.btn_run_5_pb,
+            self.main_widget.btn_run_6_pb
+        )
 
         self.cus_ac = (
             self.main_widget.cus_action_1_cb,
@@ -198,6 +206,10 @@ class Boilerplate(QtWidgets.QMainWindow):
         for x in self.la_pb:
             self.check_icons(self.la_pb.index(x))
             x.clicked.connect(partial(self.load_pb, int(self.la_pb.index(x))))
+
+        for x in self.btn_run:
+            x.setIcon(QtGui.QIcon(os.path.join(REPO_PATH, 'boilerdata/icons/btn_run.png')))
+            x.clicked.connect(partial(self.run_btn, int(self.btn_run.index(x))))
 
         self.change_item(0)
         self.main_widget.sett_cb.activated.connect(self.change_item)
@@ -353,7 +365,22 @@ class Boilerplate(QtWidgets.QMainWindow):
             self.check_icons(pos)
 
             self.set_tooltip()
-
+    def run_btn(self, pos):
+        with open(FILE_PATH, 'r') as load_file:
+            load_json = json.load(load_file, object_pairs_hook=OrderedDict)
+            load_key = load_json.keys()[pos]
+            load_value = load_json.values()[pos]
+            if load_value != '':
+                nam_file, typ_file = os.path.splitext(load_value)
+                try :
+                    if typ_file == '.py':
+                        print('RUN {}:'.format(load_value))
+                        exec(open(load_value).read())
+                    elif typ_file == '.mel':
+                        print('RUN {}:'.format(load_value))
+                        mel.eval(open(load_value).read())
+                except IOError:
+                    QtGui.QMessageBox.critical(self, 'Error', 'File tidak ditemukan (file dipindah/file dihapus)')
     def reset_ac(self):
         try:
             self.set_file('boilerdata/save.json', FILE_PATH)
@@ -500,11 +527,14 @@ class Boilerplate(QtWidgets.QMainWindow):
                 if len(load_json.values()[pos]) != 0:
                     self.la_pb[pos].setIcon(QtGui.QIcon(os.path.join(REPO_PATH, 'boilerdata/icons/minus.png')))
                     self.act_cb[pos].setText(self.set_nam(load_json.values()[pos]))
+                    self.btn_run[pos].setEnabled(True)
                 else:
                     self.la_pb[pos].setIcon(QtGui.QIcon(os.path.join(REPO_PATH, 'boilerdata/icons/add.png')))
                     self.act_cb[pos].setText(self.set_nam(load_json.keys()[pos]))
-        except:
+                    self.btn_run[pos].setEnabled(False)
+        except Exception as ex:
             self.la_pb[pos].setIcon(QtGui.QIcon(os.path.join(REPO_PATH, 'boilerdata/icons/add.png')))
+            print(ex)
             pass         
 
     def event_show(self):
